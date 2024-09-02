@@ -5,12 +5,12 @@ from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
 import os
 
-# Defina os caminhos absolutos
-caminho = r'C:\Users\kevin\Downloads\Teste'
-arquivo_txt = os.path.join(caminho, 'dados.txt')
+#  caminhos absolutos
+caminho = r'C:\Users\kevin\Downloads\Teste' # <-precisa alterar
+arquivo_txt = os.path.join(caminho, 'dados.txt')  # <-arquivo que vou precisar mudar 
 
 # Caminho para o arquivo CSV
-arquivo_csv = os.path.join(caminho, 'dados.csv')
+arquivo_csv = os.path.join(caminho, 'dados.csv')  # <- aqui será criado
 
 # Caminho completo para o arquivo de credenciais
 caminho_credenciais = os.path.join(caminho, 'credenciais.json')
@@ -92,7 +92,7 @@ def executar_periodicamente():
 
         # Aguarda 30 minutos (1800 segundos)
         print("Aguardando 30 minutos antes da próxima execução...")
-        time.sleep(1800)
+        time.sleep(60)
 
 if __name__ == "__main__":
     executar_periodicamente()
