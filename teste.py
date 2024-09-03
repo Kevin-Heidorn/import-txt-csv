@@ -7,7 +7,7 @@ import os
 
 #  caminhos absolutos
 caminho = r'C:\Users\kevin\Downloads\Teste' # <-precisa alterar
-arquivo_txt = os.path.join(caminho, 'dados.txt')  # <-arquivo que vou precisar mudar 
+arquivo_txt = os.path.join(caminho, 'txitens.txt')  # <-arquivo que vou precisar mudar 
 
 # Caminho para o arquivo CSV
 arquivo_csv = os.path.join(caminho, 'dados.csv')  # <- aqui será criado
