@@ -48,6 +48,18 @@ def txt_para_csv(arquivo_txt, arquivo_csv):
     except Exception as e:
         print(f"Erro desconhecido: {e}")
 
+# Função para formatar o preço
+def formatar_preco(preco):
+    preco = preco.strip()
+    if len(preco) == 3:
+        return f"{preco[0]},{preco[1:]}"  # Formata como X,YY
+    elif len(preco) == 4:
+        return f"{preco[:2]},{preco[2:]}"  # Formata como XX,YY
+    elif len(preco) == 5:
+        return f"{preco[:3]},{preco[3:]}"  # Formata como XXX,YY
+    else:
+        return preco  # Não formata se não tiver 3, 4 ou 5 caracteres
+
 # Função para processar o CSV e dividir em três colunas
 def processar_csv(arquivo_csv, novo_arquivo_csv):
     print(f"Iniciando o processamento do arquivo CSV: {arquivo_csv}...")
@@ -76,7 +88,9 @@ def processar_csv(arquivo_csv, novo_arquivo_csv):
                     # Remove os primeiros 3 caracteres do nome
                     nome = nome[3:].strip()
 
-                    escritor_csv.writerow([codigo, preco, nome])
+                    preco_formatado = formatar_preco(preco)  # Formata o preço
+
+                    escritor_csv.writerow([codigo, preco_formatado, nome])
 
         print(f"Arquivo CSV processado e salvo em: {novo_arquivo_csv}")
 
