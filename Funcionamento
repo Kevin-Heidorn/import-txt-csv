@@ -12,6 +12,9 @@ python3 -m pip install oauth2client
 python3 -m pip install pandas
 
 
+Novo
+python -m pip install gspread oauth2client pandas google-auth google-auth-oauthlib google-auth-httplib2
+
 abrir Google clound
 
 criar credenciadas e criar um novo arquivo JSON pela key 
